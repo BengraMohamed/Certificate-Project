@@ -19,7 +19,7 @@ FormField.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-function AddNewHomeSlider({ addHomeSlider }) {
+function AddNewHomeSlider({ AddNewHomeSlider }) {
   const [sliderData, setSliderData] = useState({
     title: "",
     mainDescription: "",
@@ -34,7 +34,7 @@ function AddNewHomeSlider({ addHomeSlider }) {
   };
 
   const handleSubmit = () => {
-    addHomeSlider(sliderData);
+    addHomeSliedit(sliderData);
   };
 
   return (
@@ -47,7 +47,7 @@ function AddNewHomeSlider({ addHomeSlider }) {
           </MDTypography>
         </MDBox>
         <MDTypography variant="h5" fontWeight="regular" color="secondary">
-          This information will describe more about the blog.
+          This information will describe more about the Home Slider .
         </MDTypography>
       </MDBox>
       <MDBox mt={5} mb={9}>
@@ -127,7 +127,7 @@ function AddNewHomeSlider({ addHomeSlider }) {
 }
 
 AddNewHomeSlider.propTypes = {
-  addHomeSlider: PropTypes.func.isRequired,
+  AddNewHomeSlider: PropTypes.func.isRequired,
 };
 
 export default AddNewHomeSlider;

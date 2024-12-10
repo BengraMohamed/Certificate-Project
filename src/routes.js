@@ -1,6 +1,8 @@
 import Analytics from "layouts/dashboards/analytics";
 import Sales from "layouts/dashboards/sales";
-// import ProfileOverview from "layouts/pages/profile/profile-overview";
+import ProfileOverview from "layouts/pages/profile/profile-overview";
+import Settings from "layouts/pages/account/settings";
+
 // -------------------blogs-----------------
 import EditBlog from "layouts/pages/1-blogs/edit-blog";
 import BlogsPage from "layouts/pages/1-blogs/blogs-page";
@@ -21,6 +23,11 @@ import MDAvatar from "components/MDAvatar";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import SchoolIcon from "@mui/icons-material/School";
+import ArticleIcon from "@mui/icons-material/Article";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
+import WorkIcon from "@mui/icons-material/Work";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
@@ -30,6 +37,8 @@ import ExamsPage from "layouts/pages/2-exams/exams-page";
 import AddNewHomeSlider from "layouts/pages/4-homeSlider/new-homeSlider";
 import EditHomeSlider from "layouts/pages/4-homeSlider/edit-homeSlider";
 import HomeSlidersPage from "layouts/pages/4-homeSlider/homeSliders-page";
+import AddNewPortfolio from "layouts/pages/5-portfolio/new-portfolio";
+import PortfolioPage from "layouts/pages/5-portfolio/portfolio-page";
 
 const routes = [
   {
@@ -42,13 +51,13 @@ const routes = [
         name: "My Profile",
         key: "my-profile",
         route: "/pages/profile/profile-overview",
-        // component: <ProfileOverview />,
+        component: <ProfileOverview />,
       },
       {
         name: "Settings",
         key: "profile-settings",
         route: "/pages/account/settings",
-        // component: <Settings />,
+        component: <Settings />,
       },
       {
         name: "Logout",
@@ -256,7 +265,7 @@ const routes = [
     type: "collapse",
     name: "Blog",
     key: "blog",
-    icon: <Icon fontSize="medium">shopping_basket</Icon>,
+    icon: <ArticleIcon fontSize="medium" />,
     collapse: [
       {
         name: "Blogs",
@@ -286,11 +295,12 @@ const routes = [
       },
     ],
   },
+  //-------------- Exam---------------------
   {
     type: "collapse",
     name: "Exam",
     key: "exam",
-    icon: <Icon fontSize="medium">shopping_basket</Icon>,
+    icon: <SchoolIcon fontSize="medium" />,
     collapse: [
       {
         name: "Exams",
@@ -320,11 +330,12 @@ const routes = [
       },
     ],
   },
+  //-------------- Home Slider---------------------
   {
     type: "collapse",
     name: "Home Slider",
-    key: "course",
-    icon: <Icon fontSize="medium">shopping_basket</Icon>,
+    key: "homslider",
+    icon: <SlideshowIcon fontSize="medium" />,
     collapse: [
       {
         name: "Home Slider",
@@ -355,40 +366,69 @@ const routes = [
     ],
   },
 
-  // {
-  //   type: "collapse",
-  //   name: "Courses",
-  //   key: "course",
-  //   icon: <Icon fontSize="medium">shopping_basket</Icon>,
-  //   collapse: [
-  //     {
-  //       name: "Courses",
-  //       icon: <Icon fontSize="small">article</Icon>,
-  //       key: "courses",
-  //       collapse: [
-  //         {
-  //           name: "New Course",
-  //           icon: <Icon fontSize="small">add_circle</Icon>,
-  //           key: "new-Course",
-  //           route: "/dashboard/2-courses/new-course",
-  //           component: <AddNewBlog />,
-  //         },
-  //         {
-  //           name: "Edit Course",
-  //           key: "edit-course",
-  //           route: "/dashboard/2-courses/edit-course",
-  //           component: <EditBlog />,
-  //         },
-  //         {
-  //           name: "Course Page",
-  //           key: "courses-page",
-  //           route: "/dashboard/2-courses/courses-page",
-  //           component: <BlogsPage />,
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    type: "collapse",
+    name: "Portfolio",
+    key: "portfolio",
+    icon: <WorkIcon fontSize="medium" />,
+    collapse: [
+      {
+        name: "Portfolio",
+        icon: <Icon fontSize="small">article</Icon>,
+        key: "portfolio",
+        collapse: [
+          {
+            name: "New Portfolio",
+            icon: <Icon fontSize="small">add_circle</Icon>,
+            key: "new-portfolio",
+            route: "/dashboard/5-portfolio/new-portfolio",
+            component: <AddNewPortfolio />,
+          },
+          {
+            name: "portfolio Page",
+            key: "portfolios-page",
+            route: "/dashboard/4-portfolio/portfolio-page",
+            component: <PortfolioPage />,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    type: "collapse",
+    name: "Courses",
+    key: "course",
+    icon: <MenuBookIcon fontSize="medium" />,
+    collapse: [
+      {
+        name: "Courses",
+        icon: <Icon fontSize="small">article</Icon>,
+        key: "courses",
+        collapse: [
+          {
+            name: "New Course",
+            icon: <Icon fontSize="small">add_circle</Icon>,
+            key: "new-Course",
+            route: "/dashboard/2-courses/new-course",
+            component: <AddNewBlog />,
+          },
+          {
+            name: "Edit Course",
+            key: "edit-course",
+            route: "/dashboard/2-courses/edit-course",
+            component: <EditBlog />,
+          },
+          {
+            name: "Course Page",
+            key: "courses-page",
+            route: "/dashboard/2-courses/courses-page",
+            component: <BlogsPage />,
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default routes;
